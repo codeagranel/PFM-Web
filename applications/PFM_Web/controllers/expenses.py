@@ -1,17 +1,9 @@
 # -*- coding: utf-8 -*-
 
+@auth.requires_login()
 def index():
-    return dict(message=T('Hello World'))
-
-def addnew():
-    form = SQLFORM(db.expense)
-    if form.process().accepted:
-        response.flash = 'Item added'
-    elif form.errors:
-        response.flash = 'Errors detected'
-    else:
-        response.flash = 'Please fill out the form'
-    return dict(form=form)
+    grid = SQLFORM.smartgrid(db.expense)
+    return dict(grid=grid)
 
 def user():
     """

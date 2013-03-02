@@ -2,7 +2,7 @@
 
 @auth.requires_login()
 def index():
-    grid = SQLFORM.smartgrid(db.category)
+    grid = SQLFORM.smartgrid(db.methodOfPayment)
     return dict(grid=grid)
 
 def user():
