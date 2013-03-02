@@ -80,3 +80,19 @@ CREATE TABLE expense(
     receipt CHAR(512)
 );
 success!
+timestamp: 2013-03-02T14:28:30.183000
+ALTER TABLE category ADD userid INTEGER;
+timestamp: 2013-03-02T14:28:30.297000
+ALTER TABLE methodOfPayment ADD userid INTEGER;
+timestamp: 2013-03-02T14:28:30.384000
+ALTER TABLE expense ADD userid INTEGER;
+timestamp: 2013-03-02T14:29:40.711000
+ALTER TABLE category ADD user_id INTEGER;
+timestamp: 2013-03-02T14:29:40.789000
+ALTER TABLE methodOfPayment ADD user_id INTEGER;
+timestamp: 2013-03-02T14:29:40.897000
+ALTER TABLE expense ADD user_id INTEGER;
+timestamp: 2013-03-02T14:29:40.982000
+ALTER TABLE expense ADD due_to DATE;
+timestamp: 2013-03-02T14:29:41.044000
+ALTER TABLE expense ADD method_of_payment INTEGER REFERENCES methodOfPayment (id) ON DELETE CASCADE;

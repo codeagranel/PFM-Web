@@ -83,26 +83,29 @@ use_janrain(auth, filename='private/janrain.key')
 #########################################################################
 
 db.define_table('category',
-    Field('name', unique=True),
-    Field('description', 'text'),
+    Field('name', label=T('Name')),
+    Field('description', 'text', label=T('Description')),
+    Field('user_id', db.auth_user, default=auth.user_id, writable=False,readable=False, label=T('User Id')), 
     format='%(name)s')
 db.category.name.requires = IS_NOT_EMPTY()
     
 db.define_table('methodOfPayment',
-    Field('name', unique=True),
-    Field('description', 'text'),
+    Field('name', label=T('Name')),
+    Field('description', 'text', label=T('Description')),
+    Field('user_id', db.auth_user, default=auth.user_id, writable=False,readable=False, label=T('User Id')), 
     format='%(name)s')
 db.methodOfPayment.name.requires = IS_NOT_EMPTY()
 
 db.define_table('expense',
-    Field('name'),
-    Field('description', 'text'),
-    Field('categories', 'list:reference category'),
-    Field('methodOfPayment', 'reference methodOfPayment'),
-    Field('amount', 'double'),
-    Field('dueTo', 'date'),
-    Field('parcels', 'integer'),
-    Field('receipt', 'upload'),
+    Field('name', label=T('Name')),
+    Field('description', 'text', label=T('Description')),
+    Field('categories', 'list:reference category', label=T('Categories')),
+    Field('method_of_payment', 'reference methodOfPayment', label=T('Method of Payment')),
+    Field('amount', 'double', label=T('Amount')),
+    Field('due_to', 'date', label=T('Due To')),
+    Field('parcels', 'integer', label=T('Parcels')),
+    Field('receipt', 'upload', label=T('Receipt')),
+    Field('user_id', db.auth_user, default=auth.user_id, writable=False,readable=False, label=T('User Id')), 
     format='%(name)s')
     
 

@@ -2,7 +2,8 @@
 
 @auth.requires_login()
 def index():
-    grid = SQLFORM.smartgrid(db.category)
+    query = db.category.user_id == auth.user_id
+    grid = SQLFORM.grid(query)
     return dict(grid=grid)
 
 def user():
