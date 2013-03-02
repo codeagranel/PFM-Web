@@ -1591,3 +1591,5 @@
 127.0.0.1, 2013-03-02 12:54:48, GET, /admin/static/images/help.png, HTTP/1.1, 304, 0.002000
 127.0.0.1, 2013-03-02 12:54:48, GET, /admin/static/images/ticket_section.png, HTTP/1.1, 304, 0.016000
 127.0.0.1, 2013-03-02 12:54:48, GET, /admin/static/images/small_button.png, HTTP/1.1, 304, 0.013000
+127.0.0.1, 2013-03-02 13:30:09, GET, /, HTTP/1.1, 500, 0.345000
+127.0.0.1, 2013-03-02 13:30:12, GET, /admin/default/ticket/PFM_Web/127.0.0.1.2013-03-02.13-30-09.b1c2de8b-3b6b-4324-a772-c8fa600a4f6f, HTTP/1.1, 200, 0.245000
