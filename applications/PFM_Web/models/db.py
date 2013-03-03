@@ -102,9 +102,9 @@ db.define_table('expense',
     Field('categories', 'list:reference category', label=T('Categories')),
     Field('method_of_payment', 'reference methodOfPayment', label=T('Method of Payment')),
     Field('amount', 'double', label=T('Amount')),
-    Field('due_to', 'date', label=T('Due To')),
-    Field('parcels', 'integer', label=T('Parcels')),
+    Field('due_to', 'datetime', label=T('Due To')),
     Field('receipt', 'upload', label=T('Receipt')),
+    Field('paid', 'boolean', label=T('Paid')),
     Field('user_id', db.auth_user, default=auth.user_id, writable=False,readable=False, label=T('User Id')), 
     format='%(name)s')
     
