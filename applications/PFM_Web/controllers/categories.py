@@ -6,6 +6,17 @@ def index():
     grid = SQLFORM.grid(query)
     return dict(grid=grid)
 
+@request.restful()
+def api():
+    response.view = 'generic.json'
+    def GET(tablename,id):
+        if not tablename=='category': raise HTTP(400)
+        return dict(category = db.category(id))
+    def POST(tablename,**fields):
+        if not tablename=='category': raise HTTP(400)
+        return db.category.validate_and_insert(**fields)
+    return locals()
+
 def user():
     """
     exposes:
